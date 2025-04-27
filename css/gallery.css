@@ -1,0 +1,564 @@
+/* Gallery Page Styles */
+.gallery-container {
+    background-color: var(--light-background);
+    min-height: calc(100vh - 300px);
+    padding: 40px 0;
+}
+
+/* Gallery Header */
+.gallery-header {
+    margin-bottom: 30px;
+}
+
+.gallery-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+    
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--background);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    font-size: 1rem;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-bar .search-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.view-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.view-controls .view-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: var(--background);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.view-controls .view-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.sort-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-controls label {
+    font-weight: 500;
+    color: var(--dark-text);
+}
+
+.sort-controls select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background);
+}
+
+.filter-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-label {
+    font-weight: 500;
+    color: var(--dark-text);
+}
+
+.filter-tag {
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: var(--background);
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-tag.active {
+    background-color: var(--primary-color);
+    color: rgb(244, 146, 27);
+    border-color: var(--primary-color);
+}
+
+/* Designs Grid */
+.designs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.design-card {
+    background-color: var(--background);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.design-card:hover {
+    transform: translateY(-5px);
+}
+
+.design-image {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.design-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    transition: var(--transition);
+}
+
+.design-card:hover .design-image img {
+    transform: scale(2.05);
+    overflow: auto;
+}
+
+.design-badges {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+}
+
+.alert-badge {
+    background-color: var(--primary-color);
+}
+
+.match-badge {
+    background-color: var(--accent-color);
+}
+
+.design-actions {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+}
+
+.design-card:hover .design-actions {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.action-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
+.action-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.action-btn.favorite-btn.active {
+    background-color: #E74C3C;
+    color: white;
+}
+
+.design-info {
+    padding: 15px;
+}
+
+.design-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--dark-text);
+}
+
+.design-date {
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+.new-design {
+    background-color: var(--light-background);
+    border: 2px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.new-design:hover {
+    background-color: var(--border-color);
+}
+
+.new-design-content {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.new-design-content i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.new-design-content h3 {
+    color: var(--primary-color);
+}
+
+/* Designs List */
+.designs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.design-list-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--background);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.design-list-item:hover {
+    transform: translateY(-3px);
+}
+
+.design-thumbnail {
+    flex: 0 0 100px;
+    height: 100px;
+}
+
+.design-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.design-details {
+    flex: 2;
+    padding: 15px;
+}
+
+.design-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--dark-text);
+}
+
+.design-list-actions {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pagination-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background-color: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pagination-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.pagination-btn:hover:not(.active) {
+    background-color: var(--light-background);
+}
+
+.pagination-ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+}
+
+/* Design Detail Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: var(--background);
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--light-text);
+    z-index: 10;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.design-detail-view {
+    display: flex;
+    gap: 30px;
+}
+
+.design-preview {
+    flex: 1;
+}
+
+.main-preview {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.design-views {
+    display: flex;
+    gap: 10px;
+}
+
+.design-views .view-btn {
+    flex: 1;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: var(--light-background);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.design-views .view-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.design-detail-info {
+    flex: 1;
+}
+
+.design-detail-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+}
+
+.design-date, .design-modified {
+    color: var(--light-text);
+    margin-bottom: 5px;
+}
+
+.design-attributes {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.design-attributes h3, .design-status h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+.design-attributes ul {
+    list-style: none;
+}
+
+.design-attributes li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.design-attributes li span:first-child {
+    font-weight: 500;
+}
+
+.status-items {
+    display: flex;
+    gap: 20px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-item i {
+    color: var(--primary-color);
+}
+
+.design-actions-large {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.btn-danger {
+    color: #E74C3C;
+    border-color: #E74C3C;
+}
+
+.btn-danger:hover {
+    background-color: #E74C3C;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .design-detail-view {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .search-bar {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .design-list-item {
+        flex-wrap: wrap;
+    }
+    
+    .design-thumbnail {
+        flex: 0 0 80px;
+        height: 80px;
+    }
+    
+    .design-details {
+        flex: 1;
+    }
+    
+    .design-list-actions {
+        flex: 0 0 100%;
+        justify-content: flex-start;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .designs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

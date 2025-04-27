@@ -1,0 +1,550 @@
+/* Alert Management Page Styles */
+.alerts-container {
+    background-color: var(--light-background);
+    min-height: calc(100vh - 300px);
+    padding: 40px 0;
+}
+
+/* Alerts Header */
+.alerts-header {
+    margin-bottom: 30px;
+}
+
+.alerts-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+}
+
+.alerts-header p {
+    color: var(--light-text);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.alerts-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.alerts-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alerts-filter label {
+    font-weight: 500;
+    color: var(--dark-text);
+}
+
+.alerts-filter select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background);
+}
+
+/* Alert Cards */
+.alerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.alert-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--background);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.alert-card:hover {
+    transform: translateY(-3px);
+}
+
+.alert-status {
+    width: 8px;
+    height: 100%;
+    min-height: 120px;
+}
+
+.alert-card.active .alert-status {
+    background-color: var(--primary-color);
+}
+
+.alert-card.matches-found .alert-status {
+    background-color: var(--accent-color);
+}
+
+.alert-card.expiring .alert-status {
+    background-color: var(--alert-color);
+}
+
+.alert-card.expired .alert-status {
+    background-color: var(--lightest-text);
+}
+
+.alert-design {
+    padding: 15px;
+    flex: 0 0 100px;
+}
+
+.alert-design img {
+    width: 100px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.alert-info {
+    flex: 2;
+    padding: 15px;
+}
+
+.alert-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--dark-text);
+}
+
+.alert-date {
+    color: var(--light-text);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.alert-criteria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.criteria-tag {
+    background-color: var(--light-background);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--light-text);
+}
+
+.alert-status-info {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+}
+
+.status-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.status-label.active {
+    background-color: rgba(74, 144, 226, 0.2);
+    color: var(--primary-color);
+}
+
+.status-label.matches {
+    background-color: rgba(155, 89, 182, 0.2);
+    color: var(--accent-color);
+}
+
+.status-label.expiring {
+    background-color: rgba(230, 126, 34, 0.2);
+    color: var(--alert-color);
+}
+
+.status-label.expired {
+    background-color: rgba(149, 165, 166, 0.2);
+    color: var(--lightest-text);
+}
+
+.alert-status-info p {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.alert-actions {
+    flex: 0 0 150px;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.alert-action-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Notification Preferences */
+.notification-preferences {
+    background-color: var(--background);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.notification-preferences h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--dark-text);
+}
+
+.preferences-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.preference-group {
+    margin-bottom: 20px;
+}
+
+.preference-group h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+.checkbox-group, .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-group label, .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: var(--light-text);
+    cursor: pointer;
+}
+
+.time-range {
+    display: flex;
+    gap: 20px;
+}
+
+.time-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.time-input label {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.time-input input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background);
+}
+
+#save-preferences {
+    margin-top: 20px;
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+
+/* Create Alert Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: var(--background);
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--light-text);
+    z-index: 10;
+}
+
+.modal-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+    font-size: 1.8rem;
+    color: var(--dark-text);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-footer {
+    padding: 20px 30px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* Alert Creation Form */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+.design-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.design-option {
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.design-option.selected {
+    border-color: var(--primary-color);
+}
+
+.design-option img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.design-name {
+    display: block;
+    padding: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--light-text);
+}
+
+.new-design-btn {
+    width: 100%;
+    height: 100%;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-background);
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.new-design-btn:hover {
+    background-color: var(--border-color);
+}
+
+.new-design-btn i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--light-text);
+}
+
+.criteria-sliders {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.criteria-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.criteria-slider label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.slider {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.slider-value {
+    align-self: flex-end;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+#duration-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background);
+}
+
+.priority-selector {
+    display: flex;
+    gap: 20px;
+}
+
+.priority-option {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.priority-option input {
+    margin-bottom: 10px;
+}
+
+.priority-label {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+}
+
+.priority-option:nth-child(1) .priority-label {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #27AE60;
+}
+
+.priority-option:nth-child(2) .priority-label {
+    background-color: rgba(74, 144, 226, 0.2);
+    color: var(--primary-color);
+}
+
+.priority-option:nth-child(3) .priority-label {
+    background-color: rgba(230, 126, 34, 0.2);
+    color: var(--alert-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .alert-card {
+        flex-wrap: wrap;
+    }
+    
+    .alert-status {
+        width: 100%;
+        height: 8px;
+        min-height: 0;
+    }
+    
+    .alert-design {
+        flex: 0 0 auto;
+    }
+    
+    .alert-info {
+        flex: 1;
+    }
+    
+    .alert-status-info {
+        flex: 0 0 100%;
+        text-align: left;
+        padding-top: 0;
+    }
+    
+    .alert-actions {
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .alerts-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .alerts-filter {
+        width: 100%;
+    }
+    
+    .alerts-filter select {
+        flex: 1;
+    }
+    
+    .preferences-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .priority-selector {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .alert-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .alert-design {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .alert-info, .alert-status-info, .alert-actions {
+        width: 100%;
+    }
+    
+    .alert-actions {
+        justify-content: center;
+    }
+    
+    .design-selector {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}

@@ -1,0 +1,293 @@
+/* Main CSS for Sew Real website */
+
+/* Header Styles */
+.header {
+    background: var(--bg-gradient-1);
+    padding: 15px 20px;
+    box-shadow: var(--shadow-medium);
+    position: relative;
+}
+
+.cute-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.star-icon {
+    color: var(--accent-gold);
+    font-size: 2rem;
+    margin: 0 10px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.login-button {
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
+}
+
+.logo-image {
+    height: 100px !important;
+    width: auto !important;
+    display: block;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    padding: 50px 20px;
+    background: var(--bg-gradient-2);
+    color: var(--text-light);
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    align-items: right;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image img {
+    max-width: 100%;
+    max-height: 400px;
+}
+
+/* Features Section */
+.features-section {
+    padding: 80px 20px;
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--accent-gold);
+    margin: 10px auto 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: var(--radius-medium);
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+    transition: all var(--transition-medium);
+    border: 2px solid var(--primary-pink);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+    border-color: var(--accent-gold);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 20px;
+    background: var(--bg-gradient-1);
+    text-align: center;
+    color: var(--text-light);
+    position: relative;
+}
+
+.cta-section h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.cta-section .button {
+    position: relative;
+    z-index: 10;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 80px 20px;
+    background-color: var(--bg-light);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: white;
+    border-radius: var(--radius-medium);
+    padding: 30px;
+    box-shadow: var(--shadow-medium);
+    transition: all var(--transition-medium);
+    border: 2px solid var(--primary-purple);
+    text-align: center;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+    border-color: var(--accent-gold);
+}
+
+.testimonial-avatar {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--primary-purple);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    padding: 50px 20px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.footer-logo h2 {
+    color: var(--primary-pink);
+    margin-bottom: 15px;
+}
+
+.footer-links h3 {
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    display: block;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--primary-pink);
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Login Form */
+.login-form {
+    margin: 20px 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        margin-bottom: 40px;
+    }
+    
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-item {
+        margin: 5px 0;
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-card, .testimonial-card {
+        padding: 20px;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+   
+    
+}
+
+
