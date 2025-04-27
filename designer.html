@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Modiste – Design Your Dream Outfit</title>
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="css/playful_ui_theme.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+
+  <!-- This page’s styles -->
+  <link rel="stylesheet" href="css/designer.css"/>
+
+  <!-- Other global -->
+  <link rel="stylesheet" href="css/customizer.css"/>
+  <link rel="stylesheet" href="css/alerts.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="cute-title">
+      <img src="images/logo.png" alt="The Modiste" class="logo-image"/>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="designer.html" class="nav-item active">Design Outfit</a>
+      <a href="gallery.html" class="nav-item">My Gallery</a>
+      <a href="alerts.html" class="nav-item">My Alerts</a>
+      <a href="#" class="nav-item login-button">Login</a>
+    </nav>
+  </div>
+
+  <!-- GAME CONTAINER: three columns -->
+  <div class="game-container">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="category-sidebar">
+      <div class="category-button" data-category="avatar"><img src="images/icon/avatar_icon.png" alt="Avatar"/></div>
+      <div class="category-button" data-category="tops"><img src="images/icon/tops_icon.png" alt="Tops"/></div>
+      <div class="category-button" data-category="bottoms"><img src="images/icon/bottoms_icon.png" alt="Bottoms"/></div>
+      <div class="category-button" data-category="dresses"><img src="images/icon/dress_icon.png" alt="Dresses"/></div>
+    </aside>
+
+    <!-- CENTER COLUMN -->
+    <main class="center-area">
+
+      <!-- WRAPPER that holds frame + buttons -->
+      <div class="canvas-wrapper">
+
+        <!-- GOLD FRAME -->
+        <div class="gold-frame">
+          <div class="gold-corner tl"></div>
+          <div class="gold-corner tr"></div>
+          <div class="gold-corner bl"></div>
+          <div class="gold-corner br"></div>
+
+          <div class="avatar-area">
+            <div class="floating-bubble" style="width:90px; height:100px; top:10%; left:20%;"></div>
+            <div class="floating-bubble" style="width:80px;  height:80px;  top:70%; left:80%;"></div>
+            <div class="floating-bubble" style="width:120px; height:120px; top:40%; left:10%;"></div>
+
+            <div class="avatar-container" id="avatar-container"></div>
+          </div>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="action-buttons">
+          <button id="save-design"  class="button button-primary">Save Design</button>
+          <button id="find-matches" class="button button-primary">Find Matches</button>
+        </div>
+
+      </div><!-- /.canvas-wrapper -->
+
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="clothing-sidebar">
+      <h2 class="category-title">Tops</h2>
+      <div class="clothing-grid" id="clothing-grid"></div>
+      <div class="sidebar-search">
+        <input
+          type="text"
+          class="clothing-search"
+          placeholder="Use AI to create a new template…"
+        />
+      </div>
+    </aside>
+
+  </div><!-- /.game-container -->
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h2>The Modiste</h2>
+            <p>Fashion-tech platform reimagining how you discover and shop for clothing</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="designer.html">Design Outfit</a>
+            <a href="gallery.html">My Gallery</a>
+            <a href="alerts.html">My Alerts</a>
+        </div>
+        <div class="footer-links">
+            <h3>Support</h3>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 The Modiste. All rights reserved.</p>
+    </div>
+</footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/main.js"></script>
+  <script src="js/avatar_outfit_designer.js"></script>
+  <script src="js/outfit_customizer.js"></script>
+  <script src="js/alerts_manager.js"></script>
+
+</body>
+</html>

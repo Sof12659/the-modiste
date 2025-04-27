@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="css/playful_ui_theme.css">
+<link rel="stylesheet" href="css/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Modiste - Alert Management</title>
+<meta name="description" content="Manage your design alerts and get notified when matching products become available.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/alerts.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="cute-title">
+    <img src="images/logo.png" alt="The Modiste" class="logo-image">
+  </div>
+  <nav class="main-nav">
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="designer.html" class="nav-item">Design Outfit</a>
+    <a href="gallery.html" class="nav-item">My Gallery</a>
+    <a href="alerts.html" class="nav-item">My Alerts</a>
+    <a href="#" class="nav-item login-button">Login</a>
+  </nav>
+</div>
+
+            
+    </header>
+
+    <main class="alerts-container">
+        <div class="container">
+            <div class="alerts-header">
+                <h2>Alert Management</h2>
+                <p>Get notified when products matching your designs become available.</p>
+                <div class="alerts-actions">
+                    <button class="btn btn-outline" id="create-alert-btn"><i class="fas fa-plus"></i> Create New Alert</button>
+                    <div class="alerts-filter">
+                        <label for="filter-select">Filter:</label>
+                        <select id="filter-select">
+                            <option value="all">All Alerts</option>
+                            <option value="active">Active</option>
+                            <option value="matches">Matches Found</option>
+                            <option value="expiring">Expiring Soon</option>
+                            <option value="expired">Expired</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alerts-list">
+                <div class="alert-card active">
+                    <div class="alert-status" title="Active"></div>
+                    <div class="alert-design">
+                        <img src="images/summer_dress.png" alt="Summer Dress Design">
+                    </div>
+                    <div class="alert-info">
+                        <h3>Summer Dress</h3>
+                        <p class="alert-date">Created: April 10, 2025</p>
+                        <div class="alert-criteria">
+                            <span class="criteria-tag">Color: Blue</span>
+                            <span class="criteria-tag">Pattern: Floral</span>
+                            <span class="criteria-tag">Max Price: $100</span>
+                        </div>
+                    </div>
+                    <div class="alert-status-info">
+                        <span class="status-label active">Active</span>
+                        <p>Scanning retailers daily</p>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn btn-sm btn-outline alert-action-btn" title="Edit Alert"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-outline alert-action-btn" title="Pause Alert"><i class="fas fa-pause"></i></button>
+                        <button class="btn btn-sm btn-outline alert-action-btn" title="Delete Alert"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="alert-card matches-found">
+                    <div class="alert-status" title="Matches Found"></div>
+                    <div class="alert-design">
+                        <img src="images/business_casual.png" alt="Business Casual Design">
+                    </div>
+                    <div class="alert-info">
+                        <h3>Business Casual</h3>
+                        <p class="alert-date">Created: April 5, 2025</p>
+                        <div class="alert-criteria">
+                            <span class="criteria-tag">Style: Blazer</span>
+                            <span class="criteria-tag">Color: Black</span>
+                            <span class="criteria-tag">Size: M</span>
+                        </div>
+                    </div>
+                    <div class="alert-status-info">
+                        <span class="status-label matches">3 Matches Found</span>
+                        <p>Last updated: 2 hours ago</p>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn btn-sm btn-primary alert-action-btn" title="View Matches"><i class="fas fa-eye"></i></button>
+                        <button class="btn btn-sm btn-outline alert-action-btn" title="Edit Alert"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-outline alert-action-btn" title="Delete Alert"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="alert-card expiring">
+                    <div class="alert-status" title="Expiring Soon"></div>
+                    <div class="alert-design">
+                        <img src="images/gown.png" alt="Evening Gown Design">
+                    </div>
+                    <div class="alert-info">
+                        <h3>Evening Gown</h3>
+                        <p class="alert-date">Created: March 15, 2025</p>
+                        <div class="alert-criteria">
+                            <span class="criteria-tag">Style: Formal</span>
+                            <span class="criteria-tag">Color: Red</span>
+                            <span class="criteria-tag">Length: Long</span>
+                        </div>
+                    </div>
+                    <div class="alert-status-info">
+                        <span class="status-label expiring">Expires in 2 days</span>
+                        <p>No matches found yet</p>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn btn-sm btn-outline alert-action-btn" title="Edit Alert"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-outline alert-action-btn" title="Extend Alert"><i class="fas fa-clock"></i></button>
+                        <button class="btn btn-sm btn-outline alert-action-btn" title="Delete Alert"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="alert-card expired">
+                    <div class="alert-status" title="Expired"></div>
+                    <div class="alert-design">
+                        <img src="images/weekend.png" alt="Weekend Casual Design">
+                    </div>
+                    <div class="alert-info">
+                        <h3>Weekend Casual</h3>
+                        <p class="alert-date">Created: February 28, 2025</p>
+                        <div class="alert-criteria">
+                            <span class="criteria-tag">Style: Casual</span>
+                            <span class="criteria-tag">Color: Green</span>
+                            <span class="criteria-tag">Season: Spring</span>
+                        </div>
+                    </div>
+                    <div class="alert-status-info">
+                        <span class="status-label expired">Expired</span>
+                        <p>Alert duration ended</p>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn btn-sm btn-outline alert-action-btn" title="Reactivate Alert"><i class="fas fa-redo"></i></button>
+                        <button class="btn btn-sm btn-outline alert-action-btn" title="Delete Alert"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notification-preferences">
+                <h3>Notification Preferences</h3>
+                <div class="preferences-form">
+                    <div class="preference-group">
+                        <h4>Notification Channels</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" checked> Email Notifications</label>
+                            <label><input type="checkbox" checked> Push Notifications</label>
+                            <label><input type="checkbox"> SMS Notifications</label>
+                        </div>
+                    </div>
+                    <div class="preference-group">
+                        <h4>Notification Frequency</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="frequency" checked> Immediate</label>
+                            <label><input type="radio" name="frequency"> Daily Digest</label>
+                            <label><input type="radio" name="frequency"> Weekly Summary</label>
+                        </div>
+                    </div>
+                    <div class="preference-group">
+                        <h4>Quiet Hours</h4>
+                        <div class="time-range">
+                            <div class="time-input">
+                                <label>From:</label>
+                                <input type="time" value="22:00">
+                            </div>
+                            <div class="time-input">
+                                <label>To:</label>
+                                <input type="time" value="07:00">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="save-preferences">Save Preferences</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="create-alert-modal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2>Create New Alert</h2>
+            </div>
+            <div class="modal-body">
+                <div class="alert-creation-form">
+                    <div class="form-group">
+                        <label>Select Design</label>
+                        <div class="design-selector">
+                            <div class="design-option selected">
+                                <img src="images/design-placeholder-5.jpg" alt="Design 1">
+                                <span class="design-name">Spring Outfit</span>
+                            </div>
+                            <div class="design-option">
+                                <img src="images/design-placeholder-6.jpg" alt="Design 2">
+                                <span class="design-name">Casual Friday</span>
+                            </div>
+                            <div class="design-option">
+                                <img src="images/design-placeholder-7.jpg" alt="Design 3">
+                                <span class="design-name">Beach Day</span>
+                            </div>
+                            <div class="design-option">
+                                <button class="new-design-btn">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Create New</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Alert Criteria</label>
+                        <div class="criteria-sliders">
+                            <div class="criteria-slider">
+                                <label>Style Match</label>
+                                <input type="range" min="0" max="100" value="80" class="slider" id="style-slider">
+                                <div class="slider-value">80%</div>
+                            </div>
+                            <div class="criteria-slider">
+                                <label>Color Match</label>
+                                <input type="range" min="0" max="100" value="90" class="slider" id="color-slider">
+                                <div class="slider-value">90%</div>
+                            </div>
+                            <div class="criteria-slider">
+                                <label>Price Range</label>
+                                <input type="range" min="0" max="500" value="150" class="slider" id="price-slider">
+                                <div class="slider-value">$150</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Alert Duration</label>
+                        <select id="duration-select">
+                            <option value="1-week">1 Week</option>
+                            <option value="2-weeks">2 Weeks</option>
+                            <option value="1-month" selected>1 Month</option>
+                            <option value="3-months">3 Months</option>
+                            <option value="6-months">6 Months</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority Level</label>
+                        <div class="priority-selector">
+                            <label class="priority-option">
+                                <input type="radio" name="priority" value="low">
+                                <span class="priority-label">Low</span>
+                            </label>
+                            <label class="priority-option">
+                                <input type="radio" name="priority" value="medium" checked>
+                                <span class="priority-label">Medium</span>
+                            </label>
+                            <label class="priority-option">
+                                <input type="radio" name="priority" value="high">
+                                <span class="priority-label">High</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancel-alert">Cancel</button>
+                <button class="btn btn-primary" id="save-alert">Create Alert</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>The Modiste</h2>
+                <p>Fashion-tech platform reimagining how you discover and shop for clothing</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="designer.html">Design Outfit</a>
+                <a href="gallery.html">My Gallery</a>
+                <a href="alerts.html">My Alerts</a>
+            </div>
+            <div class="footer-links">
+                <h3>Support</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Modiste. All rights reserved.</p>
+        </div>
+    </footer>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sew Real - Design Your Dream Outfit</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-pink: #ff85c2;
+            --primary-purple: #b388ff;
+            --accent-gold: #ffd700;
+            --light-bg: #fff0f5;
+            --dark-text: #4a2c40;
+            --light-text: #ffffff;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--primary-purple) 100%);
+            color: var(--dark-text);
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-bottom: 3px solid var(--accent-gold);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            margin: 0;
+            color: var(--primary-pink);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 2.5rem;
+        }
+        
+        /* Main Game Area */
+        .game-container {
+            display: flex;
+            height: calc(100vh - 80px);
+        }
+        
+        /* Left Sidebar - Categories */
+        .category-sidebar {
+            width: 80px;
+            background-color: rgba(179, 136, 255, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-button {
+            width: 60px;
+            height: 60px;
+            margin: 10px 0;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 2px solid var(--accent-gold);
+            transition: all 0.3s ease;
+        }
+        
+        .category-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px var(--accent-gold);
+        }
+        
+        .category-button img {
+            width: 35px;
+            height: 35px;
+        }
+        
+        /* Center Area - Avatar Display */
+        .avatar-area {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://i.imgur.com/JQcVpKX.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .avatar-container {
+            width: 300px;
+            height: 500px;
+            position: relative;
+        }
+        
+        .avatar-base {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .clothing-item {
+            position: absolute;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        
+        .avatar-platform {
+            width: 350px;
+            height: 80px;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        
+        /* Right Sidebar - Clothing Items */
+        .clothing-sidebar {
+            width: 250px;
+            background-color: rgba(255, 133, 194, 0.8);
+            overflow-y: auto;
+            padding: 15px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .clothing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .clothing-item-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 2px solid var(--accent-gold);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .clothing-item-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .clothing-item-card img {
+            max-width: 100%;
+            max-height: 100px;
+        }
+        
+        .category-title {
+            text-align: center;
+            margin: 0 0 15px 0;
+            color: white;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px dashed white;
+            padding-bottom: 5px;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+        
+        .action-button {
+            padding: 10px 20px;
+            background-color: var(--primary-purple);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-gold);
+        }
+        
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            background-color: var(--primary-pink);
+        }
+        
+        /* Decorative Elements */
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: sparkle 2s infinite;
+        }
+        
+        @keyframes sparkle {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>✨ Sew Real ✨</h1>
+    </div>
+    
+    <div class="game-container">
+        <!-- Left Sidebar - Categories -->
+        <div class="category-sidebar">
+            <div class="category-button" data-category="tops">
+                <img src="https://i.imgur.com/XcGz3Pq.png" alt="Tops">
+            </div>
+            <div class="category-button" data-category="bottoms">
+                <img src="https://i.imgur.com/JQdQQj5.png" alt="Bottoms">
+            </div>
+            <div class="category-button" data-category="dresses">
+                <img src="https://i.imgur.com/8XKUjDt.png" alt="Dresses">
+            </div>
+            <div class="category-button" data-category="shoes">
+                <img src="https://i.imgur.com/ZwSF1lR.png" alt="Shoes">
+            </div>
+            <div class="category-button" data-category="accessories">
+                <img src="https://i.imgur.com/L5RFWRy.png" alt="Accessories">
+            </div>
+            <div class="category-button" data-category="hairstyles">
+                <img src="https://i.imgur.com/pQ3msfk.png" alt="Hairstyles">
+            </div>
+        </div>
+        
+        <!-- Center Area - Avatar Display -->
+        <div class="avatar-area">
+            <div class="avatar-container">
+                <img class="avatar-base" src="https://i.imgur.com/DLzWw0v.png" alt="Avatar Base">
+                <!-- Clothing items will be added here dynamically -->
+            </div>
+            <div class="avatar-platform"></div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-button" id="save-design">Save Design</button>
+                <button class="action-button" id="find-matches">Find Matches</button>
+            </div>
+            
+            <!-- Decorative Sparkles -->
+            <div class="sparkle" style="top: 10%; left: 20%;"></div>
+            <div class="sparkle" style="top: 30%; left: 80%;"></div>
+            <div class="sparkle" style="top: 70%; left: 15%;"></div>
+            <div class="sparkle" style="top: 50%; left: 90%;"></div>
+            <div class="sparkle" style="top: 85%; left: 40%;"></div>
+        </div>
+        
+        <!-- Right Sidebar - Clothing Items -->
+        <div class="clothing-sidebar">
+            <h2 class="category-title">Tops</h2>
+            <div class="clothing-grid" id="clothing-grid">
+                <div class="clothing-item-card" data-item="top1">
+                    <img src="https://i.imgur.com/nWQXSMR.png" alt="Pink Top">
+                </div>
+                <div class="clothing-item-card" data-item="top2">
+                    <img src="https://i.imgur.com/3XB8g5f.png" alt="Blue Top">
+                </div>
+                <div class="clothing-item-card" data-item="top3">
+                    <img src="https://i.imgur.com/YwQRGzL.png" alt="White Top">
+                </div>
+                <div class="clothing-item-card" data-item="top4">
+                    <img src="https://i.imgur.com/L9wfX9i.png" alt="Black Top">
+                </div>
+                <div class="clothing-item-card" data-item="top5">
+                    <img src="https://i.imgur.com/QZ8JhV7.png" alt="Green Top">
+                </div>
+                <div class="clothing-item-card" data-item="top6">
+                    <img src="https://i.imgur.com/pVHZMmk.png" alt="Yellow Top">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample JavaScript to demonstrate functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category buttons
+            const categoryButtons = document.querySelectorAll('.category-button');
+            const categoryTitle = document.querySelector('.category-title');
+            const clothingGrid = document.getElementById('clothing-grid');
+            
+            // Clothing items data (would be loaded from backend in real implementation)
+            const clothingData = {
+                tops: [
+                    { id: 'top1', src: 'https://i.imgur.com/nWQXSMR.png', alt: 'Pink Top' },
+                    { id: 'top2', src: 'https://i.imgur.com/3XB8g5f.png', alt: 'Blue Top' },
+                    { id: 'top3', src: 'https://i.imgur.com/YwQRGzL.png', alt: 'White Top' },
+                    { id: 'top4', src: 'https://i.imgur.com/L9wfX9i.png', alt: 'Black Top' },
+                    { id: 'top5', src: 'https://i.imgur.com/QZ8JhV7.png', alt: 'Green Top' },
+                    { id: 'top6', src: 'https://i.imgur.com/pVHZMmk.png', alt: 'Yellow Top' }
+                ],
+                bottoms: [
+                    { id: 'bottom1', src: 'https://i.imgur.com/JQdQQj5.png', alt: 'Pink Skirt' },
+                    { id: 'bottom2', src: 'https://i.imgur.com/8XKUjDt.png', alt: 'Blue Jeans' },
+                    { id: 'bottom3', src: 'https://i.imgur.com/ZwSF1lR.png', alt: 'Black Pants' },
+                    { id: 'bottom4', src: 'https://i.imgur.com/L5RFWRy.png', alt: 'White Shorts' }
+                ],
+                // Other categories would be defined similarly
+            };
+            
+            // Handle category button clicks
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    categoryTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                    
+                    // Update clothing grid
+                    if (clothingData[category]) {
+                        clothingGrid.innerHTML = '';
+                        clothingData[category].forEach(item => {
+                            const card = document.createElement('div');
+                            card.className = 'clothing-item-card';
+                            card.setAttribute('data-item', item.id);
+                            
+                            const img = document.createElement('img');
+                            img.src = item.src;
+                            img.alt = item.alt;
+                            
+                            card.appendChild(img);
+                            clothingGrid.appendChild(card);
+                            
+                            // Add click event to apply clothing
+                            card.addEventListener('click', function() {
+                                applyClothing(item, category);
+                            });
+                        });
+                    }
+                });
+            });
+            
+            // Function to apply clothing to avatar
+            function applyClothing(item, category) {
+                // Remove existing item of same category
+                const existingItem = document.querySelector(`.clothing-item[data-category="${category}"]`);
+                if (existingItem) {
+                    existingItem.remove();
+                }
+                
+                // Create and position new clothing item
+                const clothingItem = document.createElement('img');
+                clothingItem.src = item.src;
+                clothingItem.alt = item.alt;
+                clothingItem.className = 'clothing-item';
+                clothingItem.setAttribute('data-category', category);
+                
+                // Position based on category
+                switch(category) {
+                    case 'tops':
+                        clothingItem.style.top = '100px';
+                        clothingItem.style.left = '50px';
+                        clothingItem.style.width = '200px';
+                        break;
+                    case 'bottoms':
+                        clothingItem.style.top = '250px';
+                        clothingItem.style.left = '50px';
+                        clothingItem.style.width = '200px';
+                        break;
+                    // Other categories would be positioned accordingly
+                }
+                
+                document.querySelector('.avatar-container').appendChild(clothingItem);
+            }
+            
+            // Action buttons
+            document.getElementById('save-design').addEventListener('click', function() {
+                alert('Design saved to your gallery!');
+            });
+            
+            document.getElementById('find-matches').addEventListener('click', function() {
+                alert('Searching for matching products...');
+                // Would navigate to search results page in real implementation
+            });
+            
+            // Create random sparkles
+            function createSparkles() {
+                const avatarArea = document.querySelector('.avatar-area');
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                avatarArea.appendChild(sparkle);
+                
+                // Remove sparkle after animation
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 2000);
+            }
+            
+            // Create sparkles periodically
+            setInterval(createSparkles, 500);
+        });
+    </script>
+</body>
+</html>

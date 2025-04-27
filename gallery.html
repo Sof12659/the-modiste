@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="css/playful_ui_theme.css">
+<link rel="stylesheet" href="css/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Modiste - My Gallery</title>
+<meta name="description" content="View and manage your saved outfit designs in your personal gallery.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="cute-title">
+    <img src="images/logo.png" alt="The Modiste" class="logo-image">
+  </div>
+  <nav class="main-nav">
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="designer.html" class="nav-item">Design Outfit</a>
+    <a href="gallery.html" class="nav-item">My Gallery</a>
+    <a href="alerts.html" class="nav-item">My Alerts</a>
+    <a href="#" class="nav-item login-button">Login</a>
+  </nav>
+</div>
+
+       
+    </header>
+
+    <main class="gallery-container">
+        <div class="container">
+            <div class="gallery-header">
+                <h2>My Designs</h2>
+            </div>
+
+            <div class="filter-tags">
+                <button class="filter-tag active" data-filter="all">All</button>
+                <button class="filter-tag" data-filter="recent">Recent</button>
+                <button class="filter-tag" data-filter="with-alerts">With Alerts</button>
+                <button class="filter-tag" data-filter="with-matches">With Matches</button>
+                <button class="filter-tag" data-filter="favorites">Favorites</button>
+            </div>
+
+            <div class="designs-grid">
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="images/summer_dress.png" alt="Summer Dress Design">
+                        <div class="design-badges">
+                            <span class="badge alert-badge" title="Active Alert"><i class="fas fa-bell"></i></span>
+                            <span class="badge match-badge" title="Matches Found"><i class="fas fa-tshirt"></i></span>
+                        </div>
+                        <div class="design-actions">
+                            <button class="action-btn edit-btn" title="Edit Design"><i class="fas fa-pencil-alt"></i></button>
+                            <button class="action-btn search-btn" title="Search for Matches"><i class="fas fa-search"></i></button>
+                            <button class="action-btn alert-btn" title="Set Alert"><i class="fas fa-bell"></i></button>
+                            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="design-info">
+                        <h3>Summer Dress</h3>
+                        <p class="design-date">April 10, 2025</p>
+                    </div>
+                </div>
+
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="images/business_casual.png" alt="Business Casual Design">
+                        <div class="design-badges">
+                            <span class="badge match-badge" title="Matches Found"><i class="fas fa-tshirt"></i></span>
+                        </div>
+                        <div class="design-actions">
+                            <button class="action-btn edit-btn" title="Edit Design"><i class="fas fa-pencil-alt"></i></button>
+                            <button class="action-btn search-btn" title="Search for Matches"><i class="fas fa-search"></i></button>
+                            <button class="action-btn alert-btn" title="Set Alert"><i class="fas fa-bell"></i></button>
+                            <button class="action-btn favorite-btn active" title="Remove from Favorites"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="design-info">
+                        <h3>Business Casual</h3>
+                        <p class="design-date">April 5, 2025</p>
+                    </div>
+                </div>
+
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="images/gown.png" alt="Evening Gown Design">
+                        <div class="design-badges">
+                            <span class="badge alert-badge" title="Active Alert"><i class="fas fa-bell"></i></span>
+                        </div>
+                        <div class="design-actions">
+                            <button class="action-btn edit-btn" title="Edit Design"><i class="fas fa-pencil-alt"></i></button>
+                            <button class="action-btn search-btn" title="Search for Matches"><i class="fas fa-search"></i></button>
+                            <button class="action-btn alert-btn" title="Set Alert"><i class="fas fa-bell"></i></button>
+                            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="design-info">
+                        <h3>Evening Gown</h3>
+                        <p class="design-date">March 15, 2025</p>
+                    </div>
+                </div>
+
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="images/weekend.png" alt="Weekend Casual Design">
+                        <div class="design-badges"></div>
+                        <div class="design-actions">
+                            <button class="action-btn edit-btn" title="Edit Design"><i class="fas fa-pencil-alt"></i></button>
+                            <button class="action-btn search-btn" title="Search for Matches"><i class="fas fa-search"></i></button>
+                            <button class="action-btn alert-btn" title="Set Alert"><i class="fas fa-bell"></i></button>
+                            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="design-info">
+                        <h3>Weekend Casual</h3>
+                        <p class="design-date">February 28, 2025</p>
+                    </div>
+                </div>
+<!-- 
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="images/design-placeholder-5.jpg" alt="Spring Outfit Design">
+                        <div class="design-badges"></div>
+                        <div class="design-actions">
+                            <button class="action-btn edit-btn" title="Edit Design"><i class="fas fa-pencil-alt"></i></button>
+                            <button class="action-btn search-btn" title="Search for Matches"><i class="fas fa-search"></i></button>
+                            <button class="action-btn alert-btn" title="Set Alert"><i class="fas fa-bell"></i></button>
+                            <button class="action-btn favorite-btn active" title="Remove from Favorites"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="design-info">
+                        <h3>Spring Outfit</h3>
+                        <p class="design-date">February 15, 2025</p>
+                    </div>
+                </div>
+
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="images/design-placeholder-6.jpg" alt="Casual Friday Design">
+                        <div class="design-badges">
+                            <span class="badge match-badge" title="Matches Found"><i class="fas fa-tshirt"></i></span>
+                        </div>
+                        <div class="design-actions">
+                            <button class="action-btn edit-btn" title="Edit Design"><i class="fas fa-pencil-alt"></i></button>
+                            <button class="action-btn search-btn" title="Search for Matches"><i class="fas fa-search"></i></button>
+                            <button class="action-btn alert-btn" title="Set Alert"><i class="fas fa-bell"></i></button>
+                            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="design-info">
+                        <h3>Casual Friday</h3>
+                        <p class="design-date">January 20, 2025</p>
+                    </div>
+                </div> -->
+
+                <!-- <div class="design-card"> -->
+                    <!-- <div class="design-image"> -->
+                        <!-- <img src="images/design-placeholder-7.jpg" alt="Beach Day Design">
+                        <div class="design-badges"></div>
+                        <div class="design-actions">
+                            <button class="action-btn edit-btn" title="Edit Design"><i class="fas fa-pencil-alt"></i></button>
+                            <button class="action-btn search-btn" title="Search for Matches"><i class="fas fa-search"></i></button>
+                            <button class="action-btn alert-btn" title="Set Alert"><i class="fas fa-bell"></i></button>
+                            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="design-info">
+                        <h3>Beach Day</h3>
+                        <p class="design-date">January 20, 2025</p>
+                    </div> -->
+                <!-- </div> -->
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>The Modiste</h2>
+                <p>Fashion-tech platform reimagining how you discover and shop for clothing</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="designer.html">Design Outfit</a>
+                <a href="gallery.html">My Gallery</a>
+                <a href="alerts.html">My Alerts</a>
+            </div>
+            <div class="footer-links">
+                <h3>Support</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Modiste. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sew Real - Search Results</title>
+    <meta name="description" content="View matching products for your custom outfit design.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/search-results.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Sew Real</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designer.html">Outfit Designer</a></li>
+                    <li><a href="gallery.html">My Gallery</a></li>
+                    <li><a href="alerts.html">Alerts</a></li>
+                    <li><a href="seamstress.html">Find Seamstress</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="search-results-container">
+        <div class="results-header">
+            <div class="container">
+                <div class="design-preview">
+                    <img src="images/design-placeholder-1.jpg" alt="Your design" id="original-design">
+                    <h2>Search Results</h2>
+                    <div class="match-stats">
+                        <span class="match-count">24 matches found</span>
+                        <div class="match-quality">
+                            <span>Match Quality:</span>
+                            <div class="quality-indicator">
+                                <div class="quality-bar" style="width: 75%;"></div>
+                            </div>
+                            <span>75%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-actions">
+                    <button class="btn btn-outline" id="modify-search"><i class="fas fa-sliders-h"></i> Modify Search</button>
+                    <button class="btn btn-secondary" id="save-results"><i class="fas fa-save"></i> Save Results</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="results-content">
+                <aside class="filter-panel">
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="price-slider">
+                            <input type="range" min="0" max="500" value="250" class="slider" id="price-slider">
+                            <div class="price-range">
+                                <span>$0</span>
+                                <span>$500</span>
+                            </div>
+                            <div class="current-price">Max: $<span id="price-value">250</span></div>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Retailers</h3>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" checked> All Retailers</label>
+                            <label><input type="checkbox"> Nordstrom</label>
+                            <label><input type="checkbox"> Macy's</label>
+                            <label><input type="checkbox"> H&M</label>
+                            <label><input type="checkbox"> Zara</label>
+                            <label><input type="checkbox"> ASOS</label>
+                            <label><input type="checkbox"> More...</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Color Match</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="color-match" checked> Any</label>
+                            <label><input type="radio" name="color-match"> Exact</label>
+                            <label><input type="radio" name="color-match"> Similar</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Size</h3>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox"> XS</label>
+                            <label><input type="checkbox" checked> S</label>
+                            <label><input type="checkbox" checked> M</label>
+                            <label><input type="checkbox"> L</label>
+                            <label><input type="checkbox"> XL</label>
+                            <label><input type="checkbox"> XXL</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Shipping Time</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="shipping" checked> Any</label>
+                            <label><input type="radio" name="shipping"> 1-2 days</label>
+                            <label><input type="radio" name="shipping"> 3-5 days</label>
+                            <label><input type="radio" name="shipping"> 1+ week</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Sustainability</h3>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox"> Eco-friendly</label>
+                            <label><input type="checkbox"> Fair Trade</label>
+                            <label><input type="checkbox"> Organic Materials</label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" id="apply-filters">Apply Filters</button>
+                    <button class="btn btn-outline btn-block" id="reset-filters">Reset Filters</button>
+                </aside>
+
+                <div class="results-grid">
+                    <div class="sort-controls">
+                        <label for="sort-select">Sort by:</label>
+                        <select id="sort-select">
+                            <option value="match">Match Accuracy</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Retailer Rating</option>
+                        </select>
+                    </div>
+
+                    <div class="product-grid">
+                        <!-- Product cards will be dynamically generated -->
+                        <div class="product-card">
+                            <div class="match-badge" style="background-color: #2ECC71;">95%</div>
+                            <div class="product-image">
+                                <img src="images/product-placeholder-1.jpg" alt="Product 1">
+                                <div class="quick-actions">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Floral Summer Dress</h3>
+                                <p class="retailer">Nordstrom</p>
+                                <p class="price">$89.99</p>
+                                <a href="#" class="btn btn-primary btn-sm">View Product</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="match-badge" style="background-color: #4A90E2;">85%</div>
+                            <div class="product-image">
+                                <img src="images/product-placeholder-2.jpg" alt="Product 2">
+                                <div class="quick-actions">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Casual Maxi Dress</h3>
+                                <p class="retailer">H&M</p>
+                                <p class="price">$59.99</p>
+                                <a href="#" class="btn btn-primary btn-sm">View Product</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="match-badge" style="background-color: #4A90E2;">80%</div>
+                            <div class="product-image">
+                                <img src="images/product-placeholder-3.jpg" alt="Product 3">
+                                <div class="quick-actions">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Patterned Sundress</h3>
+                                <p class="retailer">Zara</p>
+                                <p class="price">$75.50</p>
+                                <a href="#" class="btn btn-primary btn-sm">View Product</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="match-badge" style="background-color: #9B59B6;">70%</div>
+                            <div class="product-image">
+                                <img src="images/product-placeholder-4.jpg" alt="Product 4">
+                                <div class="quick-actions">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Flowy Beach Dress</h3>
+                                <p class="retailer">ASOS</p>
+                                <p class="price">$65.00</p>
+                                <a href="#" class="btn btn-primary btn-sm">View Product</a>
+                            </div>
+                        </div>
+
+                        <!-- More product cards would be added here -->
+                    </div>
+
+                    <div class="pagination">
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <span class="pagination-ellipsis">...</span>
+                        <button class="pagination-btn">8</button>
+                        <button class="pagination-btn next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="no-results-section" style="display: none;">
+                <div class="no-results-content">
+                    <i class="fas fa-search fa-4x"></i>
+                    <h2>No Perfect Matches Found</h2>
+                    <p>We couldn't find exact matches for your design, but we have some options for you:</p>
+                    <div class="no-results-options">
+                        <a href="#" class="btn btn-primary" id="set-alert-btn">
+                            <i class="fas fa-bell"></i> Set Alert for Future Matches
+                        </a>
+                        <a href="#" class="btn btn-secondary" id="find-seamstress-btn">
+                            <i class="fas fa-cut"></i> Connect with Local Seamstress
+                        </a>
+                        <a href="#" class="btn btn-outline" id="modify-design-btn">
+                            <i class="fas fa-pencil-alt"></i> Modify Your Design
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="quick-view-modal" id="quick-view-modal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <div class="product-comparison">
+                    <div class="original-design">
+                        <h3>Your Design</h3>
+                        <img src="images/design-placeholder-1.jpg" alt="Your design">
+                    </div>
+                    <div class="product-details">
+                        <h3>Floral Summer Dress</h3>
+                        <div class="product-gallery">
+                            <img src="images/product-placeholder-1.jpg" alt="Product 1" class="main-image">
+                            <div class="thumbnail-gallery">
+                                <img src="images/product-placeholder-1.jpg" alt="View 1" class="active">
+                                <img src="images/product-placeholder-1-alt.jpg" alt="View 2">
+                                <img src="images/product-placeholder-1-alt2.jpg" alt="View 3">
+                            </div>
+                        </div>
+                        <div class="product-info-detailed">
+                            <p class="retailer">Nordstrom</p>
+                            <p class="price">$89.99</p>
+                            <div class="match-details">
+                                <h4>Match Details</h4>
+                                <ul>
+                                    <li><span>Style:</span> 95% match</li>
+                                    <li><span>Color:</span> 90% match</li>
+                                    <li><span>Pattern:</span> 98% match</li>
+                                    <li><span>Material:</span> 85% match</li>
+                                </ul>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-primary">View on Retailer Site</a>
+                                <button class="btn btn-outline"><i class="far fa-heart"></i> Save to Favorites</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Sew Real</h2>
+                    <p>Design Your Fashion Vision</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Platform</h3>
+                        <ul>
+                            <li><a href="designer.html">Outfit Designer</a></li>
+           
+(Content truncated due to size limit. Use line ranges to read in chunks)

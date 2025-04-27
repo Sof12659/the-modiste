@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Modiste - Design Your Dream Outfit</title>
+    <link rel="stylesheet" href="css/playful_ui_theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="cute-title">
+            <img src="images/logo.png" alt="The Modiste" class="logo-image">
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-item active">Home</a>
+            <a href="designer.html" class="nav-item">Design Outfit</a>
+            <a href="gallery.html" class="nav-item">My Gallery</a>
+            <a href="alerts.html" class="nav-item">My Alerts</a>
+            <a href="#" class="nav-item login-button">Login</a>
+        </nav>
+    </div>
+    
+    <style>
+        #fashion-video {
+            width: 700px; /* or any size you want */
+            height: auto; /* maintain aspect ratio */
+            display: block;
+            margin: 0 auto; /* center it horizontally */
+        }
+    </style>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h2>Design Your Dream Outfit</h2>
+            <p>Create, discover, and bring your fashion vision to life!</p>
+            <a href="designer.html" class="button button-primary">Start Designing</a>
+        </div>
+        <div class="hero-image">
+            <video autoplay muted loop playsinline id="fashion-video">
+                <source src="images/trial_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="sparkle" style="top: 10%; left: 20%;"></div>
+            <div class="sparkle" style="top: 30%; left: 80%;"></div>
+            <div class="sparkle" style="top: 70%; left: 15%;"></div>
+        </div>
+        
+        <script>
+            const video = document.getElementById("fashion-video");
+            video.playbackRate = 1.5; // Speeds up video to 25% speed
+        </script>
+    </div>
+    
+    <div class="features-section">
+        <h2 class="section-title">How It Works</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">👗</div>
+                <h3>Design</h3>
+                <p>Create your perfect outfit with our fun, interactive designer!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Discover</h3>
+                <p>Find real products that match your design from online retailers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛍️</div>
+                <h3>Shop</h3>
+                <p>Purchase your favorite finds or set alerts for future availability.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✂️</div>
+                <h3>Create</h3>
+                <p>Can't find your design online? Connect with local seamstresses to bring your unique vision to life!</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cta-section">
+        <div class="gold-frame"></div>
+        <div class="gold-corner gold-corner-tl"></div>
+        <div class="gold-corner gold-corner-tr"></div>
+        <div class="gold-corner gold-corner-bl"></div>
+        <div class="gold-corner gold-corner-br"></div>
+        
+        <h4>Ready to bring your fashion dreams to life?</h4>
+        <a href="designer.html" class="button button-primary">Start Designing Now</a>
+    </div>
+    
+    <div class="testimonials-section">
+        <h2 class="section-title">What Our Users Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-avatar">👩🏿</div>
+                <p class="testimonial-text">"I found the perfect summer dress that matched my design exactly! So much easier than browsing through endless product listings."</p>
+                <p class="testimonial-author">- Sarah J.</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-avatar">🧑🏾‍🦱</div>
+                <p class="testimonial-text">"The design tool is so fun to use! I've created a whole wardrobe of outfits and found matching pieces for most of them."</p>
+                <p class="testimonial-author">- Emmet T.</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-avatar">👩🏻‍🦰</div>
+                <p class="testimonial-text">"I connected with an amazing local seamstress who made my dream dress when I couldn't find it in stores. Absolutely perfect!"</p>
+                <p class="testimonial-author">- Lily R.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>The Modiste</h2>
+                <p>Fashion-tech platform reimagining how you discover and shop for clothing</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="designer.html">Design Outfit</a>
+                <a href="gallery.html">My Gallery</a>
+                <a href="alerts.html">My Alerts</a>
+            </div>
+            <div class="footer-links">
+                <h3>Support</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Modiste. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Welcome Back!</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="button button-primary">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="signup-link">Sign up</a></p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
